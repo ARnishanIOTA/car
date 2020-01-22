@@ -1,0 +1,267 @@
+// variables
+$primary: rgb(224, 191, 0);
+$font: 'Montserrat', sans-serif;
+
+// ==========================
+// Global
+// ==========================
+html {
+    scroll-behavior: smooth;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.btn{
+    font-size: 1.1rem;
+    transition: .3s;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.btn-yellow{
+    border: 1px solid $primary;
+    background-color: $primary;
+    color: #fff;
+    padding: .7rem;
+    &:hover{
+        background-color: transparent;
+    }
+}
+
+// ==========================
+// flash message
+// ==========================
+.flash-message{
+    background-color: #555;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    i{
+        font-size: 1.2rem;
+    }
+}
+
+
+// ==========================
+// Navbar
+// ==========================
+nav{
+    background-color: $primary;
+    height: 4rem;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a{
+            font-size: 2.5rem;
+            font-family: 'Permanent Marker', cursive;
+            color: #fff;
+        }
+        
+          
+        .dropdown {
+            position: relative;
+            margin-left: auto;
+            &:hover .dropdown-content {
+                display: block;
+            }
+            .dropbtn {
+                background-color: transparent;
+                font-weight: 600;
+                color: white;
+                font-size: 1.2rem;
+                border: none;
+                cursor: pointer;
+                text-align: right;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+
+                a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                    font-family: $font;
+                    font-size: 1rem;
+                    &:hover {
+                        background-color: #f1f1f1
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ==========================
+// Hero
+// ==========================
+#hero{
+    height: calc(100vh - 4rem);
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        h1{
+            font-size: 2.2rem;
+        }
+        p{
+            margin: 10px 0 15px 0;
+            line-height: 1.8rem;
+        }
+    }
+}
+
+// ==========================
+// Appointment Form
+// ==========================
+#appointment-form{
+    padding: 3rem 0;
+    text-align: center;
+    .form-div{
+        width: 600px;
+        background-color: rgba(245, 238, 238, 0.596);
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 5px 5px 20px rgba(51, 51, 51, 0.295);
+        h2{
+            background-color: $primary;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        form{
+            width: 100%;
+            input{
+                width: calc(100% - 10rem);
+                height: 2rem;
+                margin-top: 1rem;
+                padding: .5rem;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.1rem;
+                border: 1px solid $primary;
+            }
+            p{
+                text-align: left;
+                margin-left: 4.5rem;
+                margin-top: 1rem;
+                color: rgb(122, 121, 121);
+            }
+            div{
+                width: calc(100% - 9rem);
+                margin: .5rem auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 10px;
+            }
+            .invalid-feedback{
+                color: red;
+                padding-bottom: 20px;
+                font-size: .8rem;
+            }
+            .is-invalid{
+                border: 1px solid red;
+            }
+            &>select{
+                width: calc(100% - 9rem);
+                margin-top: 1rem;
+            }
+            select{
+                height: 2.5rem;
+                font-size: 1.1rem;
+                border: none;
+                border-radius: 5px;
+                padding: .5rem;
+                font-weight: 400;
+                border: 1px solid $primary;
+            }
+            button{
+                margin: 1rem 0 2rem 0 !important;
+                &:hover{
+                    cursor: pointer;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+// Success Message
+#success{
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 5rem;
+    width: 300px;
+    height: 5rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #333;
+    background-color: rgb(141, 214, 141);
+    display: none;
+}
+
+// ==========================
+// dashboard
+// ==========================
+#appointment-info-table{
+    padding: 3rem 0;
+    h2{
+        font-size: 2rem;
+        margin-bottom: 1.7rem;
+        color: #333;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        td, th {
+            border: 1px solid rgba(85, 85, 85, 0.151);
+            text-align: left;
+            padding: 18px;
+            a:hover{
+                color: #555;
+            }
+        }
+          
+        tr:nth-child(even) {
+            background-color: rgba(224, 190, 0, 0.178);
+        }
+    }
+}
+
+
+// ==========================
+// footer
+// ==========================
+footer{
+    background-color: #555;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
